@@ -7,5 +7,5 @@ senha: 1234
 
 ###Equipe:
 
-Paulo Henrique Flausino Patarello
-Elton Barbosa Gomes
+- Paulo Henrique Flausino Patarello
+- Elton Barbosa Gomes
