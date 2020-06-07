@@ -13,7 +13,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <?php include("head.php"); ?>
+  <title>Electronix Store</title>
+  <link rel="shortcut icon" href="images/icon.ico" >
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script type="text/javascript" src="js/boxOver.js"></script>
 </head>
 <body>
 <div id="main_container">
@@ -56,11 +60,13 @@
         <li class="divider"></li>
         <li><a href="#" class="nav2">Products</a></li>
         <li class="divider"></li>
-        <li><a href="#" class="nav3">Specials</a></li>
-        <li class="divider"></li>
+        <!-- <li><a href="#" class="nav3">Specials</a></li>
+        <li class="divider"></li> -->
         <li><a href="#" class="nav4">My account</a></li>
         <li class="divider"></li>
         <li><a href="login.php" class="nav4">Sign Up</a></li>
+        <li class="divider"></li>
+        <li><a href="logout.php" class="nav4">Sign Down</a></li>
         <li class="divider"></li>
         <li><a href="#" class="nav5">Shipping</a></li>
         <li class="divider"></li>

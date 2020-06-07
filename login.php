@@ -34,9 +34,7 @@ if(isset($_POST["login"]) && isset($_POST["senha"])){
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
-<link rel="stylesheet" type="text/css" href="style.css" />
-<script type="text/javascript" src="js/boxOver.js"></script>
+<?php include("head.php"); ?>
 
 <body>
 
@@ -46,7 +44,6 @@ if(isset($_POST["login"]) && isset($_POST["senha"])){
                 <form method="post" action="login.php">
                     <div class="form-group">
                         <div> <a href="#"><img src="images/logo.png" alt="" border="0" width="237" height="140" /></a> </div>
-                        <!-- end of oferte_content-->
                     </div>
                     <div class="form-group">
                         <label>Login</label>

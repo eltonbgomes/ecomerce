@@ -27,16 +27,16 @@
 	<div class="container mt-4 mb-4">
 		<div class="col-md-5">
 			<form class="form"  method="POST" action="usuario_cadastrar.php">
-				<h2 class="text-primary">Novo Usuário</h2>
-				<br>
-				<h5 class="text-secondary">Preencha os campos se cadastrar.</h5>
+				<div class="form-group">
+					<div> <a href="#"><img src="images/logo.png" alt="" border="0" width="237" height="140" /></a> </div>
+				</div>
 				<p>Campos com <font color="red"> * </font>são de preenchimento obrigatório</p>
 				<hr>
 				<div class="form-group">
 					<div class="row">
 						<div class="col-md-12 mt-2">
 							<label>Nome:<font color="red"> * </font></label><br>
-							<input type="text" class="form-control" name="login" required>
+							<input type="text" class="form-control" name="nome" required>
 						</div>
 					</div>
 				</div>
@@ -44,7 +44,7 @@
 					<div class="row">
 						<div class="col-md-12 mt-2">
 							<label>Login:<font color="red"> * </font></label><br>
-							<input type="text" class="form-control "name="nome" required>
+							<input type="text" class="form-control "name="login" required>
 						</div>
 					</div>
 				</div>
@@ -59,8 +59,8 @@
 				<div class="form-group">
 					<div class="row">
 						<div class="col-md-12 mt-2">
-							<button type="submit" class="btn btn-primary">Cadastrar</button>
-							<a class="btn btn-warning" href="index.php">Cancelar</a>
+							<button type="submit" class="btn btn-black">Cadastrar</button>
+							<a class="btn btn-secondary" href="index.php">Cancelar</a>
 						</div>
 					</div>
 				</div>
