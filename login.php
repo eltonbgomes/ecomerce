@@ -1,10 +1,10 @@
 <?php
 session_start();
-$_SESSION["logado"] = FALSE;
+$_SESSION["logado"] = FALSE; //pensar em como corrigir isso, ele só pode definir como falso a primeira vez
 
 $erro = FALSE;
 
-if(isset($_POST["login"]) && isset($_POST["senha"])){
+if(isset($_POST["login"]) && isset($_POST["senha"]) && $_SESSION["logado"] == FALSE){
     include_once("conecta.php");
 
     $login = mysqli_real_escape_string($con1, trim($_POST["login"]));
@@ -45,14 +45,18 @@ if(isset($_POST["login"]) && isset($_POST["senha"])){
                     <div class="form-group">
                         <div> <a href="#"><img src="images/logo.png" alt="" border="0" width="237" height="140" /></a> </div>
                     </div>
-                    <div class="form-group">
-                        <label>Login</label>
-                        <input type="text" class="form-control" name="login" placeholder="Login">
-                    </div>
-                    <div class="form-group">
-                        <label>Senha</label>
-                        <input type="password" class="form-control" name="senha" placeholder="Senha">
-                    </div>
+                    <?php if ($_SESSION["logado"] == False){ ?>
+                        <div class="form-group">
+                            <label>Login</label>
+                            <input type="text" class="form-control" name="login" placeholder="Login">
+                        </div>
+                        <div class="form-group">
+                            <label>Senha</label>
+                            <input type="password" class="form-control" name="senha" placeholder="Senha">
+                        </div>
+                    <?php }else{ ?>
+                        <h3>VOCÊ ESTÁ LOGADO</h3>
+                    <?php } ?>
                     <?php if ($erro == TRUE){ ?>
                         <div class="ml-2 mr-2 alert alert-danger">Usuário e senha não encontrado</div>
                     <?php } ?>
