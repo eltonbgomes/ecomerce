@@ -1,13 +1,19 @@
+<?php
+  session_start();
+
+  $wellcome = "Bem vindo";
+  if (isset($_GET['login'])){
+      $wellcome .= " ".$_SESSION["nome"];
+      $login = $_GET['login'];
+  }else{
+      $login = FALSE;
+  }
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Electronix Store</title>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
-<link rel="stylesheet" type="text/css" href="style.css" />
-<!--[if IE 6]>
-<link rel="stylesheet" type="text/css" href="iecss.css" />
-<![endif]-->
-<script type="text/javascript" src="js/boxOver.js"></script>
+  <?php include("head.php"); ?>
 </head>
 <body>
 <div id="main_container">
@@ -19,7 +25,11 @@
     </div>
     <div class="languages">
       <div class="lang_text">Languages:</div>
-      <a href="#" class="lang"><img src="images/en.gif" alt="" border="0" /></a> <a href="#" class="lang"><img src="images/de.gif" alt="" border="0" /></a> </div>
+      <a href="#" class="lang"><img src="images/en.gif" alt="" border="0" /></a> <a href="#" class="lang"><img src="images/de.gif" alt="" border="0" /></a>
+    </div>
+    <div class="languages">
+      <div class="lang_text"><?php echo $wellcome; ?></div>
+    </div>
   </div>
   <div id="header">
     <div id="logo"> <a href="#"><img src="images/logo.png" alt="" border="0" width="237" height="140" /></a> </div>
@@ -50,7 +60,7 @@
         <li class="divider"></li>
         <li><a href="#" class="nav4">My account</a></li>
         <li class="divider"></li>
-        <li><a href="#" class="nav4">Sign Up</a></li>
+        <li><a href="login.php" class="nav4">Sign Up</a></li>
         <li class="divider"></li>
         <li><a href="#" class="nav5">Shipping</a></li>
         <li class="divider"></li>
@@ -198,7 +208,7 @@
           <span class="border_cart"></span> Total: <span class="price">350$</span> </div>
         <div class="cart_icon"><a href="#" title="header=[Checkout] body=[&nbsp;] fade=[on]"><img src="images/shoppingcart.png" alt="" width="48" height="48" border="0" /></a></div>
       </div>
-      <div class="title_box">What’s new</div>
+      <div class="title_box">Whatâ€™s new</div>
       <div class="border_box">
         <div class="product_title"><a href="details.html">Motorola 156 MX-VL</a></div>
         <div class="product_img"><a href="details.html"><img src="images/p2.gif" alt="" border="0" /></a></div>

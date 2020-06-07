@@ -1,4 +1,6 @@
 <?php
+session_start();
+$_SESSION["logado"] = FALSE;
 
 $erro = FALSE;
 
@@ -17,14 +19,12 @@ if(isset($_POST["login"]) && isset($_POST["senha"])){
     $totalRows_Recordset1 = mysqli_num_rows($Recordset1);
 
     if($totalRows_Recordset1 == 1){
-        session_start();
-        $_SESSION["nome"]=$row1["nome"];
-        $_SESSION["login"]=$row1["login"];
-        $_SESSION["logado"]= TRUE;
-        header ("location: home.php");
+        $_SESSION["nome"] = $row1["nome"];
+        $_SESSION["login"] = $row1["login"];
+        $_SESSION["logado"] = TRUE;
+        header ("location: index.php?login=TRUE");
         exit;
     }else{
-        $_SESSION["logado"]= FALSE;
         $erro = TRUE;
     }
 }
@@ -34,20 +34,20 @@ if(isset($_POST["login"]) && isset($_POST["senha"])){
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<?php include("head.php"); ?>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/javascript" src="js/boxOver.js"></script>
 
 <body>
 
-    <div class="sidenav">
-        <div class="login-main-text">
-            <h2>TREBULO<br>Página de Login</h2>
-            <p>Faça login para acessar o sistema</p>
-        </div>
-    </div>
     <div class="main">
         <div class="col-md-6 col-sm-12">
             <div class="login-form">
                 <form method="post" action="login.php">
+                    <div class="form-group">
+                        <div> <a href="#"><img src="images/logo.png" alt="" border="0" width="237" height="140" /></a> </div>
+                        <!-- end of oferte_content-->
+                    </div>
                     <div class="form-group">
                         <label>Login</label>
                         <input type="text" class="form-control" name="login" placeholder="Login">
@@ -61,6 +61,7 @@ if(isset($_POST["login"]) && isset($_POST["senha"])){
                     <?php } ?>
                     <button type="submit" class="btn btn-black">Login</button>
                     <a class="btn btn-secondary" href="usuario_cadastrar.php">Register</a>
+                    <a class="btn btn-light" href="index.php">Voltar</a>
                 </form>
 
                 <!-- Remind Passowrd -->

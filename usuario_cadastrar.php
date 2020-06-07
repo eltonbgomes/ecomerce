@@ -60,7 +60,7 @@
 					<div class="row">
 						<div class="col-md-12 mt-2">
 							<button type="submit" class="btn btn-primary">Cadastrar</button>
-							<a class="btn btn-warning" href="login.php">Cancelar</a>
+							<a class="btn btn-warning" href="index.php">Cancelar</a>
 						</div>
 					</div>
 				</div>

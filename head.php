@@ -1,13 +1,5 @@
 <head>
-    <title>TREBULO</title>
-    <link rel="shortcut icon" href="img/icon.ico" >
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="vendor/bootstrap/js/bootstrap.min.js" rel="stylesheet">
-    <link href="vendor/jquery/jquery1.11.1.min.js" rel="stylesheet">
-    <link href="vendor/style/login.css" rel="stylesheet">
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="js/boxOver.js"></script>
 </head>
