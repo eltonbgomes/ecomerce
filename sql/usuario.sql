@@ -30,9 +30,25 @@ SET time_zone = "-03:00";
 
 CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
   `nome` varchar(90) NOT NULL,
   `login` varchar(30) NOT NULL,
+  `rg` varchar(50) NOT NULL DEFAULT '...',
+  `cpf` varchar(50) NOT NULL DEFAULT '...',
+  `data_nascimento` date DEFAULT NULL,
+  `cep` varchar(10) DEFAULT NULL,
+  `endereco` varchar(50) NOT NULL DEFAULT '''...''',
+  `numero` varchar(10) NOT NULL,
+  `complemento` varchar(50) DEFAULT NULL,
+  `bairro` varchar(50) DEFAULT '''...''',
+  `cidade` varchar(50) NOT NULL DEFAULT '...',
+  `estado` varchar(50) NOT NULL DEFAULT '...',
+  `email` varchar(50) DEFAULT NULL,
+  `telefone` varchar(50) DEFAULT NULL,
+  `celular` varchar(50) DEFAULT NULL,
   `senha` char(32) NOT NULL
+
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --

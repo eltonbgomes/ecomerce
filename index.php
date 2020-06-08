@@ -12,7 +12,7 @@
 <?php include("home_top.php"); ?>
       <div class="center_title_bar">Últimos produtos</div>
 
-<!-- produtos da pagina       -->
+<!-- produtos da pagina -->
 <?php include("produtos.php"); ?>      
 <?php include("produtos.php"); ?>
       <div class="center_title_bar">Produtos Recomendados</div>

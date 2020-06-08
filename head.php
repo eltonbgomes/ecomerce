@@ -8,6 +8,8 @@
 
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="vendor/bootstrap/js/bootstrap.min.js" rel="stylesheet">
-    <link href="vendor/jquery/jquery1.11.1.min.js" rel="stylesheet">
+    <script src="vendor/jquery/jquery.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
     <link href="vendor/style/login.css" rel="stylesheet">
+    <script src="vendor/jquery/jquery.maskedinput.min.js"></script>
 </head>
