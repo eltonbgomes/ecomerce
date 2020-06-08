@@ -10,7 +10,7 @@ if(isset($_POST["login"]) && isset($_POST["senha"])){
 
     $senha = mysqli_real_escape_string($con1, trim($_POST["senha"]));
 
-    $sql="select nome, login from usuario where login = '$login' and senha = md5('$senha')";
+    $sql="select id, nome, login from usuario where login = '$login' and senha = md5('$senha')";
 
     mysqli_select_db($con1, $database_conexao1);
     $Recordset1 = mysqli_query($con1,$sql) or die(mysqli_error($con1));
@@ -18,6 +18,7 @@ if(isset($_POST["login"]) && isset($_POST["senha"])){
     $totalRows_Recordset1 = mysqli_num_rows($Recordset1);
 
     if($totalRows_Recordset1 == 1){
+        $_SESSION["id"] = $row1["id"];
         $_SESSION["nome"] = $row1["nome"];
         $_SESSION["login"] = $row1["login"];
         $_SESSION["logado"] = TRUE;

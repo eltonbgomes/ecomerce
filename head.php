@@ -12,4 +12,6 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <link href="vendor/style/login.css" rel="stylesheet">
     <script src="vendor/jquery/jquery.maskedinput.min.js"></script>
+
+    <script type="text/javascript" src="vendor/js/alerta.js"></script>
 </head>

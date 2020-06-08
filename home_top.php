@@ -50,7 +50,7 @@
         <li class="divider"></li>
         <!-- <li><a href="#" class="nav3">Specials</a></li>
         <li class="divider"></li> -->
-        <li><a href="#" class="nav4">Minha Conta</a></li>
+        <li><a href="usuario_alterar.php" class="nav4">Minha Conta</a></li>
         <li class="divider"></li>
         <li><a href="login.php" class="nav4">Entrar</a></li>
         <li class="divider"></li>

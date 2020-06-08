@@ -132,7 +132,7 @@
 				<div class="form-group">
 					<div class="row">
 						<div class="col-md-6 mt-2">
-							<label>Senha<font color="red"> * </font></label>
+							<label>Senha:<font color="red"> * </font></label>
 							<input type="password" class="form-control" name="senha" required>
 						</div>
 					</div>
