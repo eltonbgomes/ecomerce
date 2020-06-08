@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $erro = FALSE;
 
@@ -17,14 +18,13 @@ if(isset($_POST["login"]) && isset($_POST["senha"])){
     $totalRows_Recordset1 = mysqli_num_rows($Recordset1);
 
     if($totalRows_Recordset1 == 1){
-        session_start();
-        $_SESSION["nome"]=$row1["nome"];
-        $_SESSION["login"]=$row1["login"];
-        $_SESSION["logado"]= TRUE;
-        header ("location: home.php");
+        $_SESSION["nome"] = $row1["nome"];
+        $_SESSION["login"] = $row1["login"];
+        $_SESSION["logado"] = TRUE;
+        header ("location: index.php");
         exit;
     }else{
-        $_SESSION["logado"]= FALSE;
+        $_SESSION["logado"] = FALSE;
         $erro = TRUE;
     }
 }
@@ -38,29 +38,33 @@ if(isset($_POST["login"]) && isset($_POST["senha"])){
 
 <body>
 
-    <div class="sidenav">
-        <div class="login-main-text">
-            <h2>TREBULO<br>Página de Login</h2>
-            <p>Faça login para acessar o sistema</p>
-        </div>
-    </div>
     <div class="main">
         <div class="col-md-6 col-sm-12">
             <div class="login-form">
                 <form method="post" action="login.php">
                     <div class="form-group">
-                        <label>Login</label>
-                        <input type="text" class="form-control" name="login" placeholder="Login">
+                        <div> <a href="#"><img src="images/logo.png" alt="" border="0" width="237" height="140" /></a> </div>
                     </div>
-                    <div class="form-group">
-                        <label>Senha</label>
-                        <input type="password" class="form-control" name="senha" placeholder="Senha">
-                    </div>
-                    <?php if ($erro == TRUE){ ?>
-                        <div class="ml-2 mr-2 alert alert-danger">Usuário e senha não encontrado</div>
+                    <?php if (!isset($_SESSION["logado"]) || $_SESSION["logado"] == FALSE){ ?>
+                        <div class="form-group">
+                            <label>Login</label>
+                            <input type="text" class="form-control" name="login" placeholder="Login">
+                        </div>
+                        <div class="form-group">
+                            <label>Senha</label>
+                            <input type="password" class="form-control" name="senha" placeholder="Senha">
+                            <?php if ($erro == TRUE){ ?>
+                                <div class="ml-2 mr-2 alert alert-danger">Usuário e senha não encontrado</div>
+                            <?php } ?>
+                        </div>
+                        <button type="submit" class="btn btn-black">Login</button>
+                    <?php }else{ ?>
+                        <h3>VOCÊ ESTÁ LOGADO</h3>
+                        <a class="btn btn-warning" href="logout.php">Sair</a>
                     <?php } ?>
-                    <button type="submit" class="btn btn-black">Login</button>
+                    
                     <a class="btn btn-secondary" href="usuario_cadastrar.php">Register</a>
+                    <a class="btn btn-light" href="index.php">Voltar</a>
                 </form>
 
                 <!-- Remind Passowrd -->

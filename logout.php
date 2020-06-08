@@ -2,8 +2,8 @@
 	session_start();
 	if(isset($_SESSION['logado'])){
 		session_destroy();
-		header("Location:login.php");
+		header("Location:index.php");
 	}else{
-		echo "Não foi possível destruir a sessão.";
+		header("Location:index.php");
 	}
 ?>
