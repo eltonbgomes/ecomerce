@@ -1,13 +1,12 @@
 <?php
   session_start();
 
-  $wellcome = "Bem vindo";
-  if (isset($_GET['login'])){
-      $wellcome .= " ".$_SESSION["nome"];
-      $login = $_GET['login'];
+  if (isset($_SESSION["logado"]) && $_SESSION["logado"] == TRUE) {
+    $_SESSION["wellcome"] = "Bem vindo ".$_SESSION["nome"];
   }else{
-      $login = FALSE;
+    $_SESSION["wellcome"] = "Bem vindo";
   }
+
 ?>
 
 <?php include("home_top.php"); ?>

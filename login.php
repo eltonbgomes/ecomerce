@@ -1,10 +1,9 @@
 <?php
 session_start();
-$_SESSION["logado"] = FALSE; //pensar em como corrigir isso, ele só pode definir como falso a primeira vez
 
 $erro = FALSE;
 
-if(isset($_POST["login"]) && isset($_POST["senha"]) && $_SESSION["logado"] == FALSE){
+if(isset($_POST["login"]) && isset($_POST["senha"])){
     include_once("conecta.php");
 
     $login = mysqli_real_escape_string($con1, trim($_POST["login"]));
@@ -22,9 +21,10 @@ if(isset($_POST["login"]) && isset($_POST["senha"]) && $_SESSION["logado"] == FA
         $_SESSION["nome"] = $row1["nome"];
         $_SESSION["login"] = $row1["login"];
         $_SESSION["logado"] = TRUE;
-        header ("location: index.php?login=TRUE");
+        header ("location: index.php");
         exit;
     }else{
+        $_SESSION["logado"] = FALSE;
         $erro = TRUE;
     }
 }
@@ -45,7 +45,7 @@ if(isset($_POST["login"]) && isset($_POST["senha"]) && $_SESSION["logado"] == FA
                     <div class="form-group">
                         <div> <a href="#"><img src="images/logo.png" alt="" border="0" width="237" height="140" /></a> </div>
                     </div>
-                    <?php if ($_SESSION["logado"] == False){ ?>
+                    <?php if (!isset($_SESSION["logado"]) || $_SESSION["logado"] == FALSE){ ?>
                         <div class="form-group">
                             <label>Login</label>
                             <input type="text" class="form-control" name="login" placeholder="Login">
@@ -53,14 +53,16 @@ if(isset($_POST["login"]) && isset($_POST["senha"]) && $_SESSION["logado"] == FA
                         <div class="form-group">
                             <label>Senha</label>
                             <input type="password" class="form-control" name="senha" placeholder="Senha">
+                            <?php if ($erro == TRUE){ ?>
+                                <div class="ml-2 mr-2 alert alert-danger">Usuário e senha não encontrado</div>
+                            <?php } ?>
                         </div>
+                        <button type="submit" class="btn btn-black">Login</button>
                     <?php }else{ ?>
                         <h3>VOCÊ ESTÁ LOGADO</h3>
+                        <a class="btn btn-warning" href="logout.php">Sair</a>
                     <?php } ?>
-                    <?php if ($erro == TRUE){ ?>
-                        <div class="ml-2 mr-2 alert alert-danger">Usuário e senha não encontrado</div>
-                    <?php } ?>
-                    <button type="submit" class="btn btn-black">Login</button>
+                    
                     <a class="btn btn-secondary" href="usuario_cadastrar.php">Register</a>
                     <a class="btn btn-light" href="index.php">Voltar</a>
                 </form>
