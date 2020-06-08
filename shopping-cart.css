@@ -1,0 +1,91 @@
+
+
+a {
+	text-decoration: none;
+}
+.main {
+	width: 80vw;
+	margin: auto;
+}
+
+.main .menu ul {
+	background-color: lightgray;
+	height: 8vh;
+	line-height: 8vh;
+}
+
+.main .menu ul li{
+	list-style: none;
+	margin-right: 3rem;
+}
+
+.main .menu ul li a{
+	color: black;
+	font-family: Arial;
+	text-transform: uppercase;
+}
+
+.main .indice {
+}
+
+.main .indice ul  {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	list-style: none;
+	background-color: gray;
+	grid-gap: 5px;
+	height: 8vh;
+	line-height: 8vh;
+	margin: 0px;
+	color: white;
+	margin-bottom: 5px;
+}
+
+.main .indice ul li {
+	margin-left: 1rem; 
+}
+
+.main .indice-rodape {
+	height: 8vh; 
+	background-color: gray;
+	color: white;
+	font-size: 1.3rem;
+	line-height: 8vh;
+	padding-left: 25%; 
+	margin-top: 5px;
+
+}
+
+.flex-row {
+	display: flex;
+}
+
+.btn-compra{
+	background-color: green;
+	width: 15%;
+	margin: auto;
+	height: 7vh;
+	line-height: 7vh;
+	text-align: center;
+	color: white;
+	text-transform: uppercase;
+	font-weight: bold;	
+}
+
+.linha-produto {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	list-style: none;
+	height: 7vh;
+	line-height: 7vh;
+	background-color: lightgray;
+	padding: 0px;
+	margin: 0px;
+
+}
+
+.linha-produto li {
+		border: solid white 1px;
+text-align: center;
+}
+

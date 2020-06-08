@@ -56,7 +56,7 @@
         <li class="divider"></li>
         <li><a href="logout.php" class="nav4">Sair</a></li>
         <li class="divider"></li>
-        <li><a href="#" class="nav5">Meus pedidos</a></li>
+        <li><a href="shopping-cart.html" class="nav5">Meus pedidos</a></li>
         <li class="divider"></li>
         <li><a href="contato.php" class="nav6">Contato</a></li>
         <li class="divider"></li>
