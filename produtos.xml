@@ -1,26 +1,49 @@
 <array>
 	<produtos>
 		<produto>
-			<nome> Notebook A </nome>
+			<nome> Notebook LG </nome>
 			<preco> R$ 1500,00 </preco>
 			<imagem>laptop1.png</imagem>
 		</produto>
 		<produto>
-			<nome> Notebook B </nome>
+			<nome> Notebook Acer </nome>
 			<preco> R$ 1570,00 </preco>
 			<imagem>laptop2.png</imagem>
 		</produto>
 		<produto>
-			<nome> Livro Hacking  </nome>
+			<nome>  The art of exploitation  </nome>
 			<preco> R$ 25,00 </preco>
 			<imagem>book1.jpg</imagem>
-
 		</produto>
 		<produto>
-			<nome> Celular 01 </nome>
+			<nome> Celular Xiaomi </nome>
 			<preco> R$ 750,00 </preco>
 			<imagem>phone1.png</imagem>
-
+		</produto>
+		<produto>
+			<nome> Celular LG </nome>
+			<preco> R$ 750,00 </preco>
+			<imagem>phone2.png</imagem>
+		</produto>
+		<produto>
+			<nome>  Hacking Beginners Guide </nome>
+			<preco> R$ 50,00 </preco>
+			<imagem>book2.jpg</imagem>
+		</produto>
+		<produto>
+			<nome>  The Database Hacker´s </nome>
+			<preco> R$ 50,00 </preco>
+			<imagem>book3.jpg</imagem>
+		</produto>
+		<produto>
+			<nome>  Notebook Dell </nome>
+			<preco> R$ 2550,00 </preco>
+			<imagem>laptop3.png</imagem>
+		</produto>
+		<produto>
+			<nome>  Growth Hacking </nome>
+			<preco> R$ 70,00 </preco>
+			<imagem>book4.jpg</imagem>
 		</produto>
 	</produtos>
 </array>

@@ -14,9 +14,6 @@
 
 <!-- produtos da pagina -->
 <?php include("produtos.php"); ?>      
-<?php include("produtos.php"); ?>
-      <div class="center_title_bar">Produtos Recomendados</div>
-<?php include("produtos.php"); ?>
 
 <!-- parte lateral direita e inferior da pagina -->
 <?php include("home_bottom.php"); ?>
