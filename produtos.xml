@@ -1,0 +1,26 @@
+<array>
+	<produtos>
+		<produto>
+			<nome> Notebook A </nome>
+			<preco> R$ 1500,00 </preco>
+			<imagem>laptop1.png</imagem>
+		</produto>
+		<produto>
+			<nome> Notebook B </nome>
+			<preco> R$ 1570,00 </preco>
+			<imagem>laptop2.png</imagem>
+		</produto>
+		<produto>
+			<nome> Livro Hacking  </nome>
+			<preco> R$ 25,00 </preco>
+			<imagem>book1.jpg</imagem>
+
+		</produto>
+		<produto>
+			<nome> Celular 01 </nome>
+			<preco> R$ 750,00 </preco>
+			<imagem>phone1.png</imagem>
+
+		</produto>
+	</produtos>
+</array>
