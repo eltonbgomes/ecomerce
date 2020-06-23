@@ -16,8 +16,6 @@
       <input type="image" src="images/search.gif" class="search_bt"/>
     </div>
     <div class="languages">
-      <div class="lang_text">Languages:</div>
-      <a href="#" class="lang"><img src="images/brazil.png" alt="" border="0" /></a><a href="#" class="lang"><img src="images/en.gif" alt="" border="0" /></a>
     </div>
     <div class="languages">
       <div class="lang_text"><?php echo $_SESSION["wellcome"]; ?></div>
@@ -63,7 +61,6 @@
         <li class="currencies">Moeda
           <select>
             <option>Real</option>
-            <option>US Dollar</option>
           </select>
         </li>
       </ul>
