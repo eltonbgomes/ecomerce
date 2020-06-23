@@ -3,14 +3,14 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 15-Maio-2020 às 06:37
+-- Tempo de geração: 05-Jun-2020 às 00:46
 -- Versão do servidor: 10.4.11-MariaDB
 -- versão do PHP: 7.4.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
-SET time_zone = "+00:00";
+SET time_zone = "-03:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -25,29 +25,32 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `documentos`
+-- Estrutura da tabela `enderecos`
 --
 
-CREATE TABLE `documentos` (
+CREATE TABLE `enderecos` (
   `id` int(11) NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
-  `diretorio` varchar(50) NOT NULL,
-  `nome_original` varchar(50) NOT NULL,
-  `nome` varchar(50) NOT NULL,
-  `size` int(11) NOT NULL,
-  `tipo` varchar(6) NOT NULL,
-  `usuario_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `cep` varchar(10) DEFAULT NULL,
+  `endereco` varchar(50) NOT NULL DEFAULT '''...''',
+  `numero` varchar(10) NOT NULL,
+  `complemento` varchar(50) DEFAULT NULL,
+  `bairro` varchar(50) DEFAULT '''...''',
+  `cidade` varchar(50) NOT NULL DEFAULT '...',
+  `estado` varchar(50) NOT NULL DEFAULT '...',
+  `nome_id` char(32) NOT NULL
+
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices para tabela `documentos`
+-- Índices para tabela `usuario`
 --
-ALTER TABLE `documentos`
+ALTER TABLE `enderecos`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -55,9 +58,9 @@ ALTER TABLE `documentos`
 --
 
 --
--- AUTO_INCREMENT de tabela `documentos`
+-- AUTO_INCREMENT de tabela `usuario`
 --
-ALTER TABLE `documentos`
+ALTER TABLE `enderecos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 

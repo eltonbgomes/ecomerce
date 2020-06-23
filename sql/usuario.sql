@@ -34,29 +34,14 @@ CREATE TABLE `usuario` (
   `updated_at` datetime NOT NULL,
   `nome` varchar(90) NOT NULL,
   `login` varchar(30) NOT NULL,
-  `rg` varchar(50) NOT NULL DEFAULT '...',
   `cpf` varchar(50) NOT NULL DEFAULT '...',
   `data_nascimento` date DEFAULT NULL,
-  `cep` varchar(10) DEFAULT NULL,
-  `endereco` varchar(50) NOT NULL DEFAULT '''...''',
-  `numero` varchar(10) NOT NULL,
-  `complemento` varchar(50) DEFAULT NULL,
-  `bairro` varchar(50) DEFAULT '''...''',
-  `cidade` varchar(50) NOT NULL DEFAULT '...',
-  `estado` varchar(50) NOT NULL DEFAULT '...',
   `email` varchar(50) DEFAULT NULL,
-  `telefone` varchar(50) DEFAULT NULL,
   `celular` varchar(50) DEFAULT NULL,
+  `foto` varchar(50) NOT NULL,
   `senha` char(32) NOT NULL
 
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `usuario`
---
-
-INSERT INTO `usuario` (`id`, `login`, `nome`, `senha`) VALUES
-(1, 'admin', 'admin', '81dc9bdb52d04dc20036dbd8313ed055');
 
 --
 -- Índices para tabelas despejadas
@@ -76,7 +61,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

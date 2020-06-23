@@ -1,5 +1,6 @@
 <?php
   session_start();
+  $_SESSION["mensagem"] = "";
 
   if (isset($_SESSION["logado"]) && $_SESSION["logado"] == TRUE) {
     $_SESSION["wellcome"] = "Bem vindo ".$_SESSION["nome"];
