@@ -1,7 +1,7 @@
 <?php
 	$erro = FALSE;
 	session_start();
-	$page = "usuario_alterar";
+	$page = "cliente_alterar";
 
 	if(isset($_SESSION["logado"])  && $_SESSION["logado"] == TRUE ){
 
@@ -18,7 +18,7 @@
 			$celular = mysqli_real_escape_string($con1, trim($_POST["celular"]));
 			$senha = md5(mysqli_real_escape_string($con1, trim($_POST["senha"])));
 
-			$sql_up="update usuario set updated_at=NOW(), nome='$nome', login='$login', cpf='$cpf', data_nascimento='$data_nascimento', email='$email', celular='$celular', senha='$senha' where id='$id'";
+			$sql_up="update cliente set updated_at=NOW(), nome='$nome', login='$login', cpf='$cpf', data_nascimento='$data_nascimento', email='$email', celular='$celular', senha='$senha' where id='$id'";
 
 			mysqli_select_db($con1, $database_conexao1);
 			$Recordset1 = mysqli_query($con1,$sql_up) or die(mysqli_error($con1));
@@ -26,7 +26,7 @@
 			header("Location:index.php");
 		}
 
-		$sql_sel = "Select nome, login, cpf, data_nascimento, email, celular, foto from usuario where id='$id'";
+		$sql_sel = "Select nome, login, cpf, data_nascimento, email, celular, foto from cliente where id='$id'";
 
 		mysqli_select_db($con1,$database_conexao1);
 		$Recordset1 = mysqli_query($con1,$sql_sel) or die(mysqli_error($con1));
@@ -49,7 +49,7 @@
 
 			<?php if ($erro == FALSE) { ?>
 
-				<form class="form"  method="POST" action="usuario_alterar.php">
+				<form class="form"  method="POST" action="cliente_alterar.php">
 				<div class="form-group">
 					<div class="row">
 						<div class="col-md-6 mt-2">
@@ -61,11 +61,11 @@
 							if ($row1["foto"]) {
 								$foto = $row1["foto"];
 								echo '<img src="files/'.$foto.'" class="img-thumbnail"  style="height:140px;" align="right"/>';
-								echo '<a class="btn btn-secondary" href="usuario_upload_foto.php">Alterar foto</a>';
-								echo '<a class="btn btn-secondary" href="usuario_foto_excluir.php">Excluir foto</a>';
+								echo '<a class="btn btn-secondary" href="cliente_upload_foto.php">Alterar foto</a>';
+								echo '<a class="btn btn-secondary" href="cliente_foto_excluir.php">Excluir foto</a>';
 							} else {
 								echo '<img src="default-profile.jpg" alt="" border="0" width="140" height="140" align="right"/>';
-								echo '<a class="btn btn-secondary" href="usuario_upload_foto.php">Alterar foto</a>';
+								echo '<a class="btn btn-secondary" href="cliente_upload_foto.php">Alterar foto</a>';
 							}
 						?>
 						</div>
@@ -123,7 +123,7 @@
 						<div class="col-md-12 mt-2">
 							<button type="submit" class="btn btn-black">Alterar</button>
 							<a class="btn btn-secondary" href="index.php">Cancelar</a>
-							<button class="btn btn-danger" onclick="alerta_usuario_excluir()">Excluir Conta</button>
+							<button class="btn btn-danger" onclick="alerta_cliente_excluir()">Excluir Conta</button>
 						</div>
 					</div>
 				</div>

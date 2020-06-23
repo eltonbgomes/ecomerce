@@ -6,7 +6,7 @@
 	}
 	$id = $_SESSION["id"];
 
-	$sql_sel = "Select nome, foto from usuario where id='$id'";
+	$sql_sel = "Select nome, foto from cliente where id='$id'";
 
 	mysqli_select_db($con1,$database_conexao1);
 	$Recordset1 = mysqli_query($con1,$sql_sel) or die(mysqli_error($con1));
@@ -48,14 +48,14 @@
 			unlink("files/".$row1["foto"]);
 		}
 
-		$sql_up="update usuario set updated_at=NOW(), foto='$nova_imagem' where id='$id'";
+		$sql_up="update cliente set updated_at=NOW(), foto='$nova_imagem' where id='$id'";
 
 		mysqli_select_db($con1, $database_conexao1);
 		$Recordset1 = mysqli_query($con1,$sql_up) or die(mysqli_error($con1));
 
 		$_SESSION["mensagem"] = "<br><p>UPLOAD REALIZAD0 COM SUCESSO</p><br>";
 
-		header("Location:usuario_upload_foto.php");
+		header("Location:cliente_upload_foto.php");
 	}
 
 ?>
@@ -92,7 +92,7 @@
 				<div class="row">
 					<div class="col-md-6 mt-2">
 						<label>Foto de perfil:</label>
-						<form action="usuario_upload_foto.php" method="post" enctype="multipart/form-data">
+						<form action="cliente_upload_foto.php" method="post" enctype="multipart/form-data">
 							<input type="file" name="imagem" id="imagem" class="btn btn-light"/>
 							<input type="submit" name="gravar" value="Enviar arquivo" id="gravar" class="btn btn-black"/>
 							<a class="btn btn-secondary" href="index.php">Cancelar envio de foto</a>

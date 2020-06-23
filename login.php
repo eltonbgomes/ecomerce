@@ -11,7 +11,7 @@ if(isset($_POST["login"]) && isset($_POST["senha"])){
 
     $senha = mysqli_real_escape_string($con1, trim($_POST["senha"]));
 
-    $sql="select id, nome, login from usuario where login = '$login' and senha = md5('$senha')";
+    $sql="select id, nome, login from cliente where login = '$login' and senha = md5('$senha')";
 
     mysqli_select_db($con1, $database_conexao1);
     $Recordset1 = mysqli_query($con1,$sql) or die(mysqli_error($con1));
@@ -65,7 +65,7 @@ if(isset($_POST["login"]) && isset($_POST["senha"])){
                         <a class="btn btn-warning" href="logout.php">Sair</a>
                     <?php } ?>
                     
-                    <a class="btn btn-secondary" href="usuario_cadastrar.php">Register</a>
+                    <a class="btn btn-secondary" href="cliente_cadastrar.php">Register</a>
                     <a class="btn btn-light" href="index.php">Voltar</a>
                 </form>
 

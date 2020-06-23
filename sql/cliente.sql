@@ -25,10 +25,10 @@ SET time_zone = "-03:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuario`
+-- Estrutura da tabela `cliente`
 --
 
-CREATE TABLE `usuario` (
+CREATE TABLE `cliente` (
   `id` int(11) NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
@@ -48,9 +48,9 @@ CREATE TABLE `usuario` (
 --
 
 --
--- Índices para tabela `usuario`
+-- Índices para tabela `cliente`
 --
-ALTER TABLE `usuario`
+ALTER TABLE `cliente`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -58,9 +58,9 @@ ALTER TABLE `usuario`
 --
 
 --
--- AUTO_INCREMENT de tabela `usuario`
+-- AUTO_INCREMENT de tabela `cliente`
 --
-ALTER TABLE `usuario`
+ALTER TABLE `cliente`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 

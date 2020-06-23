@@ -4,7 +4,7 @@
 		include_once("conecta.php");
 		$id = $_SESSION["id"];
 
-		$sql_sel = "Select nome, foto from usuario where id='$id'";
+		$sql_sel = "Select nome, foto from cliente where id='$id'";
 
 		mysqli_select_db($con1,$database_conexao1);
 		$Recordset1 = mysqli_query($con1,$sql_sel) or die(mysqli_error($con1));
@@ -14,13 +14,15 @@
 			unlink("files/".$row1["foto"]);
 		}
 
-		$sql= "delete from usuario where id='$id'";
+		echo "dss";
+
+		$sql_up="update cliente set updated_at=NOW(), foto='' where id='$id'";
 
 		mysqli_select_db($con1, $database_conexao1);
-		$Recordset1 = mysqli_query($con1,$sql) or die(mysqli_error($con1));
+		$Recordset1 = mysqli_query($con1,$sql_up) or die(mysqli_error($con1));
 
-		session_destroy();
-
-		header("Location:index.php");
+		header("Location:cliente_upload_foto.php");
+	}else{
+		echo "Usuário não logado";
 	}
 ?>

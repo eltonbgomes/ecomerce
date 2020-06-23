@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	$page = "usuario_cadastrar";
+	$page = "cliente_cadastrar";
 	
 	if(isset($_POST["nome"]) && isset($_POST["login"]) && isset($_POST["senha"])){
 		include_once("conecta.php");
@@ -13,13 +13,13 @@
 		$celular = mysqli_real_escape_string($con1, trim($_POST["celular"]));
 		$senha = md5(mysqli_real_escape_string($con1, trim($_POST["senha"])));
 
-		$sql="insert into usuario (created_at, nome, login, cpf, data_nascimento, email, celular, senha) values(NOW(), '$nome', '$login', '$cpf', '$data_nascimento', '$email', '$celular', '$senha')";
+		$sql="insert into cliente (created_at, nome, login, cpf, data_nascimento, email, celular, senha) values(NOW(), '$nome', '$login', '$cpf', '$data_nascimento', '$email', '$celular', '$senha')";
 
 		mysqli_select_db($con1, $database_conexao1);
 		mysqli_query($con1,$sql) or die(mysqli_error($con1));
 		$_SESSION["id"] = mysqli_insert_id($con1);
 
-		header("Location:usuario_upload_foto.php");
+		header("Location:cliente_upload_foto.php");
 	}
 ?>
 <!DOCTYPE html>
@@ -44,7 +44,7 @@
 			<p>Campos com <font color="red"> * </font>são de preenchimento obrigatório</p>
 			<hr>
 			
-			<form class="form"  method="POST" id="formUsuario" action="usuario_cadastrar.php">
+			<form class="form"  method="POST" id="formcliente" action="cliente_cadastrar.php">
 				<div class="form-group">
 					<div class="row">
 						<div class="col-md-8 mt-2">
@@ -91,7 +91,7 @@
 			<div class="form-group">
 				<div class="row">
 					<div class="col-md-12 mt-2">
-						<button type="submit" form="formUsuario" class="btn btn-black" id="submit-all">
+						<button type="submit" form="formcliente" class="btn btn-black" id="submit-all">
 							Cadastrar
 						</button>
 						<a class="btn btn-secondary" href="index.php">Cancelar</a>
