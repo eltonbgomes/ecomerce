@@ -53,11 +53,9 @@
 			$optimalWidth  = $optionArray['optimalWidth'];
 			$optimalHeight = $optionArray['optimalHeight'];
 
-
 			// *** Resample - create image canvas of x, y size
 			$this->imageResized = imagecreatetruecolor($optimalWidth, $optimalHeight);
 			imagecopyresampled($this->imageResized, $this->image, 0, 0, 0, 0, $optimalWidth, $optimalHeight, $this->width, $this->height);
-
 
 			// *** if option is 'crop', then crop too
 			if ($option == 'crop') {
