@@ -2,7 +2,7 @@ CREATE DATABASE Ecommercephp;
 
 USE Ecommercephp;
 
-CREATE TABLE Clientes (
+CREATE TABLE cliente (
 	id_cliente INT PRIMARY KEY,
 	created_at datetime ,
 	updated_at datetime ,
