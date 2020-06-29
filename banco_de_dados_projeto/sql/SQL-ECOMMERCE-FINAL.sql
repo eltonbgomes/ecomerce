@@ -3,7 +3,7 @@ CREATE DATABASE Ecommercephp;
 USE Ecommercephp;
 
 CREATE TABLE cliente (
-	id INT PRIMARY KEY,
+	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	created_at datetime ,
 	updated_at datetime ,
 	nome VARCHAR(50),
@@ -17,9 +17,9 @@ CREATE TABLE cliente (
 );
 
 
-CREATE TABLE Endereco_Entrega (
+CREATE TABLE trttt (
 	id_cliente INT,
-	cep CHAR(10),
+	cep VARCHAR(10),
 	numero VARCHAR(10),
 	complemento VARCHAR(30),
 	PRIMARY KEY (id_cliente, cep, numero, complemento),
@@ -39,7 +39,7 @@ CREATE TABLE Telefones(
 	telefone CHAR(15),
 	PRIMARY KEY (Cod_Transportadora, telefone),
 	FOREIGN KEY (Cod_Transportadora) REFERENCES Transportadoras (Cod_Transportadora)
-);	
+);
 
 
 CREATE TABLE Pedidos(
@@ -49,15 +49,23 @@ CREATE TABLE Pedidos(
 	Cod_Transportadora INT,
 	Data_Entrega VARCHAR(10),
 	Data_Envio VARCHAR(10),
-	cep CHAR(10),
+	cep VARCHAR(10),
 	complemento VARCHAR(30),
 	numero VARCHAR(10),
 	FOREIGN KEY (id_cliente) REFERENCES cliente (id),
 	FOREIGN KEY (Cod_Transportadora) REFERENCES Transportadoras (Cod_Transportadora),
-	FOREIGN KEY (cep) REFERENCES Endereco_Entrega (cep),
-	FOREIGN KEY (numero) REFERENCES Endereco_Entrega (numero),
-	FOREIGN KEY (complemento) REFERENCES Endereco_Entrega (complemento)
+	FOREIGN KEY (cep) REFERENCES trttt (cep),
+	FOREIGN KEY (numero) REFERENCES trttt (numero),
+	FOREIGN KEY (complemento) REFERENCES trttt (complemento)
 );	
+
+
+CREATE TABLE Produtos(
+	Cod_Produto INT PRIMARY KEY,
+	nome VARCHAR(100),
+	peso VARCHAR(10),
+	preco VARCHAR (255)
+);
 
 
 CREATE TABLE Possui(
@@ -66,14 +74,6 @@ CREATE TABLE Possui(
 	PRIMARY KEY (Cod_Pedido, Cod_Produto),
 	FOREIGN KEY (Cod_Pedido) REFERENCES Pedidos (Cod_Pedido),
 	FOREIGN KEY (Cod_Produto) REFERENCES Produtos(Cod_Produto)
-);
-
-
-CREATE TABLE Produtos(
-	Cod_Produto INT PRIMARY KEY,
-	nome VARCHAR(100),
-	peso VARCHAR(10),
-	preco VARCHAR (255)
 );
 
 
@@ -122,6 +122,3 @@ CREATE TABLE Fornece(
 	FOREIGN KEY (Cod_Produto) REFERENCES Produtos(Cod_Produto)
 
 );
-
-ALTER TABLE `cliente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
