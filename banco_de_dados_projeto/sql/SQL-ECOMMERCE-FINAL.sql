@@ -17,12 +17,16 @@ CREATE TABLE cliente (
 );
 
 
-CREATE TABLE trttt (
+CREATE TABLE Endereco_Entrega (
+	id_endereco_entrega INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	id_cliente INT,
 	cep VARCHAR(10),
-	numero VARCHAR(10),
+	estado VARCHAR(40),
+	bairro VARCHAR(40),
+	cidade VARCHAR(40),
+	rua VARCHAR(40),
+	numero VARCHAR(5),
 	complemento VARCHAR(30),
-	PRIMARY KEY (id_cliente, cep, numero, complemento),
 	FOREIGN KEY (id_cliente) REFERENCES cliente (id)
 );
 
@@ -42,38 +46,11 @@ CREATE TABLE Telefones(
 );
 
 
-CREATE TABLE Pedidos(
-	Codigo_Pedido INT PRIMARY KEY,
-	Data_Realizacao VARCHAR(10),
-	id_cliente INT,
-	Cod_Transportadora INT,
-	Data_Entrega VARCHAR(10),
-	Data_Envio VARCHAR(10),
-	cep VARCHAR(10),
-	complemento VARCHAR(30),
-	numero VARCHAR(10),
-	FOREIGN KEY (id_cliente) REFERENCES cliente (id),
-	FOREIGN KEY (Cod_Transportadora) REFERENCES Transportadoras (Cod_Transportadora),
-	FOREIGN KEY (cep) REFERENCES trttt (cep),
-	FOREIGN KEY (numero) REFERENCES trttt (numero),
-	FOREIGN KEY (complemento) REFERENCES trttt (complemento)
-);	
-
-
 CREATE TABLE Produtos(
 	Cod_Produto INT PRIMARY KEY,
 	nome VARCHAR(100),
 	peso VARCHAR(10),
 	preco VARCHAR (255)
-);
-
-
-CREATE TABLE Possui(
-	Cod_Pedido INT,
-	Cod_Produto INT,
-	PRIMARY KEY (Cod_Pedido, Cod_Produto),
-	FOREIGN KEY (Cod_Pedido) REFERENCES Pedidos (Cod_Pedido),
-	FOREIGN KEY (Cod_Produto) REFERENCES Produtos(Cod_Produto)
 );
 
 
@@ -121,4 +98,26 @@ CREATE TABLE Fornece(
 	FOREIGN KEY (Cod_Fornecedor) REFERENCES Fornecedores (Cod_Fornecedor),
 	FOREIGN KEY (Cod_Produto) REFERENCES Produtos(Cod_Produto)
 
+);
+
+CREATE TABLE Pedidos(
+	Cod_Pedido INT PRIMARY KEY,
+	Data_Realizacao VARCHAR(10),
+	id_cliente INT,
+	Cod_Transportadora INT,
+	Data_Entrega VARCHAR(10),
+	Data_Envio VARCHAR(10),
+	id_endereco_entrega INT,
+	FOREIGN KEY (id_cliente) REFERENCES cliente (id),
+	FOREIGN KEY (Cod_Transportadora) REFERENCES Transportadoras (Cod_Transportadora),
+	FOREIGN KEY (id_endereco_entrega) REFERENCES Endereco_Entrega (id_endereco_entrega)
+);
+
+
+CREATE TABLE Possui(
+	Cod_Pedido INT,
+	Cod_Produto INT,
+	PRIMARY KEY (Cod_Pedido, Cod_Produto),
+	FOREIGN KEY (Cod_Pedido) REFERENCES Pedidos (Cod_Pedido),
+	FOREIGN KEY (Cod_Produto) REFERENCES Produtos(Cod_Produto)
 );
