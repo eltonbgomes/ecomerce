@@ -1,7 +1,7 @@
 <?php
 
 $hostname_conexao1 = "localhost";
-$database_conexao1 = "ecomerce";
+$database_conexao1 = "Ecommercephp";
 $username_conexao1 = "root";
 $password_conexao1 = "";
 
